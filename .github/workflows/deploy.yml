@@ -3,7 +3,7 @@ name: Deploy Next.js site to GitHub Pages
 on:
   # main 브랜치에 푸시할 때마다 실행
   push:
-    branches: ["main"]
+    branches: ["master"]
   # Actions 탭에서 수동으로 워크플로우 실행 가능하게 설정
   workflow_dispatch:
 
