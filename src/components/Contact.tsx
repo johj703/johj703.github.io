@@ -1,3 +1,5 @@
+"use clinet"
+
 import React, { useState } from 'react';
 import { FaGithub, FaLinkedin, FaEnvelope, FaCopy } from 'react-icons/fa';
 
