@@ -82,15 +82,6 @@ const Contact = () => {
             <FaLinkedin size={32} />
           </a>
         </div>
-
-        <div className="mt-12">
-          <a 
-            href={`mailto:${email}`} 
-            className="bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition-transform duration-300 inline-block transform hover:scale-105"
-          >
-            메일 보내기
-          </a>
-        </div>
       </div>
     </section>
   );
