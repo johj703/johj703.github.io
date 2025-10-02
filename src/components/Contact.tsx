@@ -57,13 +57,6 @@ const Contact = () => {
         {/* 소셜 링크 아이콘 */}
         <div className="flex items-center justify-center space-x-6">
           <a 
-            href={`mailto:${email}`} 
-            aria-label="Email"
-            className="text-gray-600 hover:text-blue-600 transition-colors duration-300"
-          >
-            <FaEnvelope size={32} />
-          </a>
-          <a 
             href="https://github.com/johj703" 
             target="_blank"
             rel="noopener noreferrer" 
