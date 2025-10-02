@@ -73,7 +73,7 @@ const Contact = () => {
             <FaGithub size={32} />
           </a>
           <a 
-            href="https://linkedin.com/in/your-profile" 
+            href="https://www.linkedin.com/in/johj703/" 
             target="_blank"
             rel="noopener noreferrer" 
             aria-label="LinkedIn" 
