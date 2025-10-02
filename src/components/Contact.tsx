@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope, FaCopy } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaCopy } from 'react-icons/fa';
 
 const Contact = () => {
   const email = 'johj703@nate.com';
