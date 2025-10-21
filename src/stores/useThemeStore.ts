@@ -1,5 +1,5 @@
 import {create} from "zustand";
-import { persist } from "zustand/middleware"
+import { createJSONStorage, persist } from "zustand/middleware"
 
 interface ThemeState {
     isDark: boolean;
@@ -15,7 +15,8 @@ export const useThemeStore = create<ThemeState>()(
             setTheme: (isDark: boolean) => set({ isDark }),
         }),
         {
-            name: 'theme-storage',
+            name: 'theme-storage',  // localStorage에 저장될 키 이름
+            storage: createJSONStorage(() => localStorage),
         }
     )
 );
