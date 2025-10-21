@@ -1,10 +1,31 @@
 'use client'
 
 import { useThemeStore } from "@/stores/useThemeStore";
-import {Moon, Sun, } from "lucide-react"
+import {Moon, Sun } from "lucide-react"
+import { useEffect, useState } from "react";
 
 export default function ThemeToggle() {
     const {isDark, toggleTheme} = useThemeStore();
+    const {mounted, setMounted} = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    useEffect(() => {
+        if(mounted) {
+            if(isDark) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        }
+    }, [isDark, mounted]);
+
+    if(!mounted) {
+        return null;
+    }
+
     return(
         <button
             onClick={toggleTheme}
