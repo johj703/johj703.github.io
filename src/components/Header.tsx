@@ -1,3 +1,4 @@
+// src/components/Header.tsx
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -46,7 +47,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-sm shadow-md z-40">
+    <header className="fixed top-0 left-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm shadow-md dark:shadow-gray-800/50 z-40 border-b border-gray-200 dark:border-gray-800">
       <nav className="container mx-auto px-6 py-4 flex justify-center items-center">
         <div className="flex space-x-8">
           {navLinks.map((link) => (
@@ -57,8 +58,8 @@ const Header = () => {
               onClick={() => setActiveLink(link.id)}
               className={`transition-colors duration-300 text-lg ${
                 activeLink === link.id
-                  ? "text-blue-600 font-semibold" // 활성 링크 스타일
-                  : "text-gray-700 hover:text-blue-600" // 비활성 링크 스타일
+                  ? "text-blue-600 dark:text-blue-400 font-semibold" // 활성 링크 스타일
+                  : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400" // 비활성 링크 스타일
               }`}
             >
               {link.title}
