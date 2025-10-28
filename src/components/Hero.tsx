@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center bg-gray-50 pt-16"
+      className="min-h-screen flex items-center justify-center bg-gray-50"
     >
       <div className="text-center">
         <h1 className="text-5xl font-bold mb-2">조현준</h1>
