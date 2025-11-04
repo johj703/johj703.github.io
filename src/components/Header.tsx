@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import { useNavigationStore } from "@/stores/useNavigationStore";
+import React, { useEffect } from "react";
 
 const Header = () => {
-  const [activeLink, setActiveLink] = useState("hero");
+  const [activeSection, setActiveSection, sections] = useNavigationStore();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,7 +20,7 @@ const Header = () => {
             currentPosition >= section.offsetTop &&
             currentPosition < section.offsetTop + section.offsetHeight
           ) {
-            setActiveLink(sectionId);
+            setActiveSection(sectionId);
             break;
           }
         }
@@ -35,7 +36,7 @@ const Header = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [sections, setActiveSection]);
 
   const navLinks = [
     { id: "hero", title: "Home" },
@@ -54,9 +55,9 @@ const Header = () => {
               key={link.id}
               href={`#${link.id}`}
               // 클릭 시 즉시 상태를 업데이트하여 부드러운 사용자 경험 제공
-              onClick={() => setActiveLink(link.id)}
+              onClick={() => setActiveSection(link.id)}
               className={`transition-colors duration-300 text-lg ${
-                activeLink === link.id
+                activeSection === link.id
                   ? "text-blue-600 dark:text-blue-400 font-semibold" // 활성 링크 스타일
                   : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400" // 비활성 링크 스타일
               }`}
