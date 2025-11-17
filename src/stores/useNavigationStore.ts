@@ -4,14 +4,14 @@ import { persist } from "zustand/middleware";
 interface NavigationStore {
   activeSection: string;
   setActiveSection: (section: string) => void;
-  section: string[];
+  sections: string[];
 }
 
 export const useNavigationStore = create<NavigationStore>()(
   persist(
     (set) => ({
       activeSection: "hero",
-      sections: ["here", "about", "skills", "projects", "contact"],
+      sections: ["hero", "about", "skills", "projects", "contact"],
       setActiveSection: (section: string) => set({ activeSection: section }),
     }),
     {
