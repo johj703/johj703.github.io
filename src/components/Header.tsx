@@ -4,11 +4,16 @@ import { useNavigationStore } from "@/stores/useNavigationStore";
 import React, { useEffect } from "react";
 
 const Header = () => {
-  const [activeSection, setActiveSection, sections] = useNavigationStore();
+  const { activeSection, setActiveSection, sections } = useNavigationStore();
 
   useEffect(() => {
+    // sections가 배열인지 확인
+    if (!Array.isArray(sections) || sections.length === 0) {
+      console.log("Sections not ready: ", sections);
+      return;
+    }
+
     const handleScroll = () => {
-      const sections = ["hero", "about", "skills", "projects", "contact"];
       // 화면의 중앙을 기준으로 섹션을 감지하도록 offset 조정
       const offset = window.innerHeight / 2;
       const currentPosition = window.scrollY + offset;
